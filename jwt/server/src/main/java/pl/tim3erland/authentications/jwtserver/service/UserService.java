@@ -40,6 +40,7 @@ public class UserService {
             return usersRolesDao.getRolesByRoRoUid().getRoCode();
         }).collect(Collectors.toList());
         return UserTokenDto.builder()
+                .login(userPasswordDto.getLogin())
                 .token(JwtUtils.generateJwtToken(userPasswordDto.getLogin(), roles)).build();
     }
 
