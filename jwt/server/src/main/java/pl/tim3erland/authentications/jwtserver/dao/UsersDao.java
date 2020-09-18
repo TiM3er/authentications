@@ -2,6 +2,7 @@ package pl.tim3erland.authentications.jwtserver.dao;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -10,7 +11,7 @@ public class UsersDao {
     private String usUid;
     private String usLogin;
     private String usPassword;
-    private Object usCreateDate;
+    private Date usCreateDate;
     private Collection<UsersRolesDao> usersRolesByUsUid;
 
     @Id
@@ -45,11 +46,11 @@ public class UsersDao {
 
     @Basic
     @Column(name = "us_create_date")
-    public Object getUsCreateDate() {
+    public Date getUsCreateDate() {
         return usCreateDate;
     }
 
-    public void setUsCreateDate(Object usCreateDate) {
+    public void setUsCreateDate(Date usCreateDate) {
         this.usCreateDate = usCreateDate;
     }
 
